@@ -32,11 +32,13 @@ class FFNN(nn.Module):
 
     def forward(self, input_vector):
         # [to fill] obtain first hidden layer representation
-
+        h = self.W1(input_vector)
+        h_activated = self.activation(h)
         # [to fill] obtain output layer representation
-
+        output = self.W2(h_activated)
         # [to fill] obtain probability dist.
-
+        #apply softmax to get probability dist
+        predicted_vector = self.softmax(output)
         return predicted_vector
 
 
